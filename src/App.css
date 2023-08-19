@@ -8,8 +8,28 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  align-items: flex-start;
+}
+
+.left-panel {
+  width: 80px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.tool-btn.active {
+  background-color: #ccc;
 }
 
 .reset-button {
@@ -20,7 +40,8 @@ body {
 }
 
 .interactive-area {
-  width: 100%;
+  flex: 1;
+  width: calc(100vw - 80px); /* Adjust for left panel width */
   height: 100%;
   background-color: white;
   position: relative;
