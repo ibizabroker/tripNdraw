@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
+import draw from "./assets/pencil-icon.png"
+import eraser from "./assets/eraser-icon.png"
 
 function App() {
   const [tool, setTool] = useState("draw");
@@ -75,17 +77,15 @@ function App() {
   return (
     <div className="App">
       <div className="left-panel">
-        <button
-          onClick={handleDraw}
+        <button        
           className={`tool-btn ${tool === "draw" ? "active" : ""}`}
         >
-          🖋️
+          <img src={draw} width={25} height={25} alt="draw" onClick={handleDraw} />
         </button>
         <button
-          onClick={handleErase}
           className={`tool-btn ${tool === "erase" ? "active" : ""}`}
         >
-          🧽
+          <img src={eraser} width={25} height={25} alt="draw" onClick={handleErase} />
         </button>
         {tool === "erase" && (
           <input
