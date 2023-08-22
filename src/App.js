@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
+import html2canvas from "html2canvas";
 import "./App.css";
 import draw from "./assets/pencil-icon.png"
 import eraser from "./assets/eraser-icon.png"
@@ -8,6 +9,7 @@ function App() {
   const [isDrawing, setIsDrawing] = useState(false);
   const [dots, setDots] = useState([]);
   const [eraserSize, setEraserSize] = useState(10);
+  const interactiveAreaRef = useRef(null);
 
   const handleDraw = () => {
     setTool("draw");
@@ -72,6 +74,20 @@ function App() {
     return color;
   };
 
+  const saveScreenshot = async () => {
+    if (interactiveAreaRef.current) {
+      const interactiveArea = interactiveAreaRef.current;
+
+      const canvas = await html2canvas(interactiveArea, { scale: 2 });
+      const imgData = canvas.toDataURL("image/png");
+
+      const link = document.createElement("a");
+      link.href = imgData;
+      link.download = "drawing.png";
+      link.click();
+    }
+  };
+
   const cursorStyle = tool === "draw" ? "pointer" : "crosshair";
 
   return (
@@ -100,7 +116,11 @@ function App() {
       <button className="reset-button" onClick={resetDrawing}>
         Reset
       </button>
+      <button className="save-button" onClick={saveScreenshot}>
+        Save
+      </button>
       <div
+        ref={interactiveAreaRef}
         className="interactive-area"
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
