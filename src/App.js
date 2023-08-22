@@ -131,6 +131,12 @@ function App() {
       <div
         ref={interactiveAreaRef}
         className="interactive-area"
+        onTouchStart={startDrawing}
+        onTouchEnd={stopDrawing}
+        onTouchMove={(event) => {
+          drawDot(event.touches[0]);
+          eraseDots(event.touches[0]);
+        }}
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
         onMouseMove={(event) => {
