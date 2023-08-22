@@ -9,6 +9,7 @@ function App() {
   const [isDrawing, setIsDrawing] = useState(false);
   const [dots, setDots] = useState([]);
   const [eraserSize, setEraserSize] = useState(10);
+  const [darkMode, setDarkMode] = useState(false);
   const interactiveAreaRef = useRef(null);
 
   const handleDraw = () => {
@@ -27,7 +28,7 @@ function App() {
     if (!isDrawing) return;
 
     const color = tool === "erase" ? "#ffffff" : getRandomColor();
-    const x = event.clientX - 80; // Adjust for left panel width
+    const x = event.clientX - 80;
     const y = event.clientY;
 
     const newDot = {
@@ -54,7 +55,7 @@ function App() {
   const eraseDots = (event) => {
     if (!isDrawing || tool !== "erase") return;
 
-    const x = event.clientX - 80; // Adjust for left panel width
+    const x = event.clientX - 80;
     const y = event.clientY;
 
     setDots((prevDots) =>
@@ -88,10 +89,15 @@ function App() {
     }
   };
 
+  const handleDarkModeToggle = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const modeClass = darkMode ? "dark-mode" : "";
   const cursorStyle = tool === "draw" ? "pointer" : "crosshair";
 
   return (
-    <div className="App">
+    <div className={`App ${modeClass}`}>
       <div className="left-panel">
         <button        
           className={`tool-btn ${tool === "draw" ? "active" : ""}`}
@@ -118,6 +124,9 @@ function App() {
       </button>
       <button className="save-button" onClick={saveScreenshot}>
         Save
+      </button>
+      <button className="mode-button" onClick={handleDarkModeToggle}>
+        {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
       <div
         ref={interactiveAreaRef}

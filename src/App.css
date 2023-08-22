@@ -32,6 +32,21 @@ body {
   background-color: #ccc;
 }
 
+.interactive-area {
+  flex: 1;
+  width: calc(100vw - 80px);
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+.colored-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+}
+
 .reset-button {
   position: absolute;
   top: 1%;
@@ -47,17 +62,18 @@ body {
   z-index: 1;
 }
 
-.interactive-area {
-  flex: 1;
-  width: calc(100vw - 80px); /* Adjust for left panel width */
-  height: 100%;
-  background-color: white;
-  position: relative;
+.mode-button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  margin-right: 8%;
+  z-index: 1;
 }
 
-.colored-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
+.dark-mode .left-panel {
+  background-color: #333;
+}
+
+.dark-mode .interactive-area {
+  background-color: #222;
 }
