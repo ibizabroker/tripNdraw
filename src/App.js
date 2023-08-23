@@ -7,6 +7,10 @@ import { ReactComponent as DarkMode } from "./assets/dark-mode.svg";
 import { ReactComponent as LightMode } from "./assets/light-mode.svg";
 import { ReactComponent as Reset } from "./assets/reset.svg";
 import { ReactComponent as Save } from "./assets/save.svg";
+import PencilCursorDark from "./assets/pencil-cursor-dark.svg";
+import PencilCursorLight from "./assets/pencil-cursor-light.svg";
+import EraserCursorDark from "./assets/eraser-cursor-dark.svg";
+import EraserCursorLight from "./assets/eraser-cursor-light.svg";
 
 function App() {
   const [tool, setTool] = useState("draw");
@@ -98,7 +102,9 @@ function App() {
   };
 
   const modeClass = darkMode ? "dark-mode" : "";
-  const cursorStyle = tool === "draw" ? "auto" : "auto";
+  const cursorStyle = darkMode ? 
+                      (tool === "draw" ? "url(" + PencilCursorLight + ") 0 15, auto" : "url(" + EraserCursorLight + ") 5 8, auto") : 
+                      (tool === "draw" ? "url(" + PencilCursorDark + ") 0 15, auto" : "url(" + EraserCursorDark + ") 5 8, auto");
 
   return (
     <div className={`App ${modeClass}`}>
