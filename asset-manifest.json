@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/tripNdraw/static/css/main.f9d0a9e8.css",
+    "main.js": "/tripNdraw/static/js/main.fe1ee7d2.js",
+    "static/js/787.863476e5.chunk.js": "/tripNdraw/static/js/787.863476e5.chunk.js",
+    "static/media/eraser-icon.png": "/tripNdraw/static/media/eraser-icon.c0d23d51f32e7569e51d.png",
+    "static/media/light-mode.svg": "/tripNdraw/static/media/light-mode.f02f70ea2537ffde3ab00a9ccaea4a67.svg",
+    "index.html": "/tripNdraw/index.html",
+    "static/media/dark-mode.svg": "/tripNdraw/static/media/dark-mode.9bf3cdf86cec72e57d8d9cc0739e60f5.svg",
+    "static/media/save.svg": "/tripNdraw/static/media/save.28a5e1ea509b5380255e57a327c8bd6b.svg",
+    "static/media/reset.svg": "/tripNdraw/static/media/reset.4c30734aa9ab90ad1a9abb76fc3a0cf9.svg",
+    "static/media/pencil-cursor-light.svg": "/tripNdraw/static/media/pencil-cursor-light.881e5e80ce5923dd39bf62f238bdbbaa.svg",
+    "static/media/pencil-cursor-dark.svg": "/tripNdraw/static/media/pencil-cursor-dark.d1bfc6f53dcf19dc0baeb01de9493ebf.svg",
+    "static/media/eraser-cursor-light.svg": "/tripNdraw/static/media/eraser-cursor-light.b1944565bd95e0d1129c3e159d7c5624.svg",
+    "static/media/eraser-cursor-dark.svg": "/tripNdraw/static/media/eraser-cursor-dark.7ecb5cc624907b4dbcdd96650cb0d8a2.svg",
+    "main.f9d0a9e8.css.map": "/tripNdraw/static/css/main.f9d0a9e8.css.map",
+    "main.fe1ee7d2.js.map": "/tripNdraw/static/js/main.fe1ee7d2.js.map",
+    "787.863476e5.chunk.js.map": "/tripNdraw/static/js/787.863476e5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9d0a9e8.css",
+    "static/js/main.fe1ee7d2.js"
+  ]
+}
