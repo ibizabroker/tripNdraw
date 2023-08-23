@@ -28,7 +28,7 @@ function App() {
     if (!isDrawing) return;
 
     const color = tool === "erase" ? "#ffffff" : getRandomColor();
-    const x = event.clientX - 80;
+    const x = event.clientX - 60;
     const y = event.clientY;
 
     const newDot = {
@@ -55,7 +55,7 @@ function App() {
   const eraseDots = (event) => {
     if (!isDrawing || tool !== "erase") return;
 
-    const x = event.clientX - 80;
+    const x = event.clientX - 60;
     const y = event.clientY;
 
     setDots((prevDots) =>

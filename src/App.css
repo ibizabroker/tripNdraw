@@ -12,7 +12,7 @@ body {
 }
 
 .left-panel {
-  width: 80px;
+  width: 60px;
   height: 100vh;
   background-color: #f0f0f0;
   display: flex;
@@ -34,7 +34,7 @@ body {
 
 .interactive-area {
   flex: 1;
-  width: calc(100vw - 80px);
+  width: calc(100vw - 60px);
   height: 100%;
   background-color: #fff;
   position: relative;
@@ -58,7 +58,7 @@ body {
   position: absolute;
   top: 1%;
   right: 1%;
-  margin-right: 4%;
+  margin-right: 60px;
   z-index: 1;
 }
 
@@ -66,7 +66,7 @@ body {
   position: absolute;
   top: 1%;
   right: 1%;
-  margin-right: 8%;
+  margin-right: 120px;
   z-index: 1;
 }
 
