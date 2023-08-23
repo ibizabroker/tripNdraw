@@ -29,7 +29,13 @@ body {
 }
 
 .tool-btn.active {
-  background-color: #ccc;
+  background-color: #FAF9F6;
+}
+
+.slider {
+  position: absolute;
+  margin-top: 200px;
+  transform: rotate(270deg);
 }
 
 .interactive-area {
@@ -49,6 +55,10 @@ body {
 
 .reset-button {
   position: absolute;
+  cursor: pointer;
+  stroke: #333;
+  width: 30px;
+  height: 30px;
   top: 1%;
   right: 1%;
   z-index: 1;
@@ -56,22 +66,46 @@ body {
 
 .save-button {
   position: absolute;
+  cursor: pointer;
+  stroke: #333;
+  width: 30px;
+  height: 30px;
   top: 1%;
   right: 1%;
-  margin-right: 60px;
+  margin-right: 50px;
   z-index: 1;
 }
 
 .mode-button {
   position: absolute;
+  cursor: pointer;
+  color: #333;
+  width: 30px;
+  height: 30px;
   top: 1%;
   right: 1%;
-  margin-right: 120px;
+  margin-right: 100px;
   z-index: 1;
+}
+
+.dark-mode .save-button {
+  stroke: #f0f0f0;
+}
+
+.dark-mode .reset-button {
+  stroke: #f0f0f0;
+}
+
+.dark-mode .mode-button {
+  color: #f0f0f0;
 }
 
 .dark-mode .left-panel {
   background-color: #333;
+}
+
+.dark-mode .tool-btn.active {
+  background-color: #444;
 }
 
 .dark-mode .interactive-area {

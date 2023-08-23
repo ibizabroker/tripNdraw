@@ -3,6 +3,10 @@ import html2canvas from "html2canvas";
 import "./App.css";
 import draw from "./assets/pencil-icon.png"
 import eraser from "./assets/eraser-icon.png"
+import { ReactComponent as DarkMode } from "./assets/dark-mode.svg";
+import { ReactComponent as LightMode } from "./assets/light-mode.svg";
+import { ReactComponent as Reset } from "./assets/reset.svg";
+import { ReactComponent as Save } from "./assets/save.svg";
 
 function App() {
   const [tool, setTool] = useState("draw");
@@ -94,7 +98,7 @@ function App() {
   };
 
   const modeClass = darkMode ? "dark-mode" : "";
-  const cursorStyle = tool === "draw" ? "pointer" : "crosshair";
+  const cursorStyle = tool === "draw" ? "auto" : "auto";
 
   return (
     <div className={`App ${modeClass}`}>
@@ -111,23 +115,22 @@ function App() {
         </button>
         {tool === "erase" && (
           <input
+            className="slider"
             type="range"
-            min="1"
+            min="8"
             max="50"
             value={eraserSize}
             onChange={adjustEraserSize}
           />
         )}
       </div>
-      <button className="reset-button" onClick={resetDrawing}>
-        Reset
-      </button>
-      <button className="save-button" onClick={saveScreenshot}>
-        Save
-      </button>
-      <button className="mode-button" onClick={handleDarkModeToggle}>
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
+      <Reset className="reset-button" onClick={resetDrawing} />
+      <Save className="save-button" onClick={saveScreenshot} />
+      {darkMode ?
+        <LightMode className="mode-button" onClick={handleDarkModeToggle}/>
+        :
+        <DarkMode className="mode-button" onClick={handleDarkModeToggle}/>
+      }
       <div
         ref={interactiveAreaRef}
         className="interactive-area"
