@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-Ever feel like tripping while drawing? I got up covered.
+Ever feel like tripping while drawing? I got you covered.
 
 ## Features
 
